@@ -125,6 +125,28 @@
                 <p>&copy; 2026 Angel Hdez. Todos los derechos reservados.</p>
             </div>
         </footer>
+        <script>
+            // Hamburger menu functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
 
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('mobile-menu');
+                    navLinks.classList.toggle('active');
+                });
+
+                // Close menu when clicking a link
+                const navItems = document.querySelectorAll('.nav-links a');
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('mobile-menu');
+                        navLinks.classList.remove('active');
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
